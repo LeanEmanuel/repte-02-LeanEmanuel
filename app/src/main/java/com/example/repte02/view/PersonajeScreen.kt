@@ -55,7 +55,7 @@ fun PersonajeScreen(navController: NavController, repteViewModel: RepteViewModel
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(
-                onClick = { navController.navigate(Routes.NombreScreen.route) }
+                onClick = { navController.navigate(Routes.NombreScreen.route) },
             ) {
                 Text(
                     text = "Continuar"
@@ -70,7 +70,8 @@ fun mostrarImagenes(modifier: Modifier) {
 
     Column(
         modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Row(
@@ -81,9 +82,7 @@ fun mostrarImagenes(modifier: Modifier) {
                     id = R.drawable.gomah
                 ),
                 contentDescription = null,
-                modifier = modifier.clickable {
-
-                }
+                modifier = modifier.clickable {}
 
                 )
             Image(
