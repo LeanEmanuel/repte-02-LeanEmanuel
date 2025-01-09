@@ -50,12 +50,16 @@ fun PersonajeScreen(navController: NavController, repteViewModel: RepteViewModel
                 modifier = Modifier.size(400.dp)
             )
 
-            mostrarImagenes(modifier = Modifier)
+            MostrarImagenes(modifier = Modifier, repteViewModel)
 
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(
-                onClick = { navController.navigate(Routes.NombreScreen.route) },
+                onClick = {
+                    if (repteViewModel.currentImage.value != null) {
+                        navController.navigate(Routes.NombreScreen.route)
+                    }
+                },
             ) {
                 Text(
                     text = "Continuar"
@@ -66,7 +70,7 @@ fun PersonajeScreen(navController: NavController, repteViewModel: RepteViewModel
 }
 
 @Composable
-fun mostrarImagenes(modifier: Modifier) {
+fun MostrarImagenes(modifier: Modifier, repteViewModel: RepteViewModel) {
 
     Column(
         modifier = Modifier.fillMaxWidth(),
@@ -76,54 +80,71 @@ fun mostrarImagenes(modifier: Modifier) {
 
         Row(
             modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
                 painter = painterResource(
                     id = R.drawable.gomah
                 ),
                 contentDescription = null,
-                modifier = modifier.clickable {}
+                modifier = modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.gomah) }
 
-                )
+            )
             Image(
                 painter = painterResource(
                     id = R.drawable.goku
                 ),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.goku) }
             )
             Image(
                 painter = painterResource(
                     id = R.drawable.vegeta
                 ),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.vegeta) }
             )
 
         }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
         Row(
-            modifier = Modifier
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Image(
                 painter = painterResource(
                     id = R.drawable.piccolo
                 ),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.piccolo) }
             )
             Image(
                 painter = painterResource(
                     id = R.drawable.supreme
                 ),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp)
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.supreme) }
             )
             Image(
                 painter = painterResource(
                     id = R.drawable.masked_majin
                 ),
                 contentDescription = null,
-                modifier = Modifier.size(100.dp),
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable { repteViewModel.seleccionarImage(R.drawable.masked_majin) }
             )
         }
     }

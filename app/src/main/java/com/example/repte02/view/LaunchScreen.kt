@@ -23,7 +23,7 @@ import com.example.repte02.R
 import com.example.repte02.model.Routes
 
 @Composable
-fun LaunchScreen (navController: NavController){
+fun LaunchScreen(navController: NavController) {
 
     Box(
         modifier = Modifier
@@ -32,12 +32,13 @@ fun LaunchScreen (navController: NavController){
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
-        Column (
+        Column(
             modifier = Modifier.fillMaxSize(),
 
-        ) {
+            ) {
             Image(
-                painter = painterResource(id = R.drawable.dragonball_daima_logo
+                painter = painterResource(
+                    id = R.drawable.dragonball_daima_logo
                 ),
                 contentDescription = null,
                 modifier = Modifier.size(400.dp)
@@ -46,15 +47,12 @@ fun LaunchScreen (navController: NavController){
         }
 
         Button(
-            onClick = {navController.navigate(Routes.PersonajeScreen.route)}
+            onClick = { navController.navigate(Routes.PersonajeScreen.route) }
         ) {
-            Text (
+            Text(
                 text = "Entrar"
             )
         }
-
-
-
     }
 }
 

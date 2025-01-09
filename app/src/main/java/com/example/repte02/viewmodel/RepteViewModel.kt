@@ -5,23 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class RepteViewModel() : ViewModel() {
-    private val _currentImage = MutableLiveData<Image>()
-    val currentImage: MutableLiveData<Image> = _currentImage
+    private val _currentImage = MutableLiveData<Int>()
+    val currentImage: MutableLiveData<Int> = _currentImage
 
     private val _nombre = MutableLiveData<String>()
-    var nombre: MutableLiveData<String> = _nombre
+    val nombre: MutableLiveData<String> = _nombre
 
 
-
-
-    fun seleccionarImage(){
-
+    fun seleccionarImage(imageRes: Int) {
+        _currentImage.value = imageRes
     }
 
-    fun setNombre(){
-        _nombre.value = nombre.toString()
+    fun setNombre(nombre: String) {
+        _nombre.value = nombre
     }
-
-
-
 }
