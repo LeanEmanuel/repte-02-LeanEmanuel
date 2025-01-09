@@ -17,7 +17,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.repte02.model.Routes
 import com.example.repte02.ui.theme.Repte02Theme
 import com.example.repte02.view.LaunchScreen
+import com.example.repte02.view.NombreScreen
 import com.example.repte02.view.PersonajeScreen
+import com.example.repte02.view.ResultadoScreen
 import com.example.repte02.viewmodel.RepteViewModel
 
 class MainActivity : ComponentActivity() {
@@ -48,6 +50,9 @@ fun Repte02(modifier: Modifier = Modifier, repteViewModel: RepteViewModel) {
     ) {
         composable(Routes.LaunchScreen.route) { LaunchScreen(navigationController) }
         composable(Routes.PersonajeScreen.route) { PersonajeScreen(navigationController, repteViewModel) }
+        composable(Routes.NombreScreen.route) { NombreScreen(navigationController, repteViewModel) }
+        composable(Routes.ResultadoScreen.route) { ResultadoScreen(navigationController, repteViewModel)
+        }
     }
 }
 

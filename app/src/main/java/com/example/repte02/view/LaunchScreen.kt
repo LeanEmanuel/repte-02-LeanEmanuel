@@ -3,6 +3,7 @@ package com.example.repte02.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,12 +29,13 @@ fun LaunchScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
+            .background(Color.White)
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
 
             ) {
             Image(

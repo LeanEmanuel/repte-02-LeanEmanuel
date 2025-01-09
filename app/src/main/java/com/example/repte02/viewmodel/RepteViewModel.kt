@@ -5,10 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class RepteViewModel() : ViewModel() {
-    private val _currentImage = MutableLiveData<Int>()
+    private val _currentImage = MutableLiveData<Int>(null)
     val currentImage: MutableLiveData<Int> = _currentImage
 
-    private val _nombre = MutableLiveData<String>()
+    private val _nombre = MutableLiveData<String>("")
     val nombre: MutableLiveData<String> = _nombre
 
 
